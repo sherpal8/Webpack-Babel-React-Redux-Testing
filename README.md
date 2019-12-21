@@ -1,11 +1,11 @@
 # Objective
 
-To reinforce understanding of:
+App created to reinforce understanding of:
 
 - Babel
-- Webpack
+- Webpack & configurations
 - ESLint
 - React
-- Redux
-- Testing - behaviour, unit and snapshot
+- Redux State Managament
+- Testing - behaviour, unit and snapshot (Jest, Enzyme)
 - Compiling and minimizing file for build
