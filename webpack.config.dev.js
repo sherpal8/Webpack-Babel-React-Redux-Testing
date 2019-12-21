@@ -25,5 +25,12 @@ module.exports = {
     disableHostCheck: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     https: false
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      // tells webpack plugin of where to find html and favicon
+      template: "src/index.html",
+      favicon: "src/favicon.ico"
+    })
+  ]
 };
