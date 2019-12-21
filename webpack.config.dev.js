@@ -32,5 +32,19 @@ module.exports = {
       template: "src/index.html",
       favicon: "src/favicon.ico"
     })
-  ]
+  ],
+  module: {
+    // tell webpack what files we want it to handle
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"] // babel-loader to bundle js/jsx files into webpack
+      },
+      {
+        test: /(\.css)$/,
+        use: ["style-loader", "css-loader"] // to bundle css files into webpack
+      }
+    ]
+  }
 };
