@@ -8,4 +8,4 @@ App created to reinforce understanding of:
 - React
 - Redux State Managament
 - Testing - behaviour, unit and snapshot (Jest, Enzyme)
-- Compiling and minimizing file for build
+- Compile and minimize file for build
