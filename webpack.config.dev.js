@@ -39,7 +39,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"] // babel-loader to bundle js/jsx files into webpack
+        use: ["babel-loader", "eslint-loader"] // babel-loader to bundle js/jsx files into webpack
       },
       {
         test: /(\.css)$/,
