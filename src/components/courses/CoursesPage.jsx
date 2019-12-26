@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 
 class CoursesPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      course: {
-        title: ""
-      }
-    };
-  }
+  state = {
+    course: {
+      title: ""
+    }
+  };
 
   handleChange = event => {
     const course = { ...this.state.course, title: event.target.value };
     this.setState({ course });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    alert(this.state.course.title);
   };
 
   render() {
