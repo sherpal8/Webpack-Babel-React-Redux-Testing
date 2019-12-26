@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class CoursesPage extends Component {
   state = {
@@ -33,4 +34,8 @@ class CoursesPage extends Component {
   }
 }
 
-export default CoursesPage;
+function mapStateToProps(state) {
+  return { courses: state.courses };
+}
+
+export default connect(mapStateToProps)(CoursesPage);
