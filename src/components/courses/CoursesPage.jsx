@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import * as courseActions from "../../redux/actions/courseActions";
+import PropTypes from "prop-types";
 class CoursesPage extends Component {
   state = {
     course: {
@@ -15,7 +16,7 @@ class CoursesPage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    alert(this.state.course.title);
+    this.props.dispatch(courseActions.createCourse(this.state.course));
   };
 
   render() {
