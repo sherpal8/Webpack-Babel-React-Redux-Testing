@@ -45,8 +45,8 @@ CoursesPage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return { courses: state.courses };
+function mapStateToProps({ courses }) {
+  return { courses };
 }
 
 const mapDispatchToProps = dispatch => {
