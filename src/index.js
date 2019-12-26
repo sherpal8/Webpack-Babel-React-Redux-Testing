@@ -8,7 +8,6 @@ import configureStore from "./redux/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
 
 const store = configureStore(); // pass initial state when server-rendered App *or* state from localStorage
-console.log(store);
 render(
   <ReduxProvider store={store}>
     <Router>
