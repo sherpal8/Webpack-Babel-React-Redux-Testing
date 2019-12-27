@@ -14,7 +14,7 @@ Relevant source code: https://github.com/typicode/json-server/blob/master/src/cl
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const path = require("path");
-const { createSlug, validateCourse } = require("./apiUtils");
+const { createSlug, validateCourse } = require("./apiServerUtils");
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 
 // Can pass a limited number of options to this to override (some) defaults. See https://github.com/typicode/json-server#api
