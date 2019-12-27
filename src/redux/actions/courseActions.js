@@ -14,6 +14,7 @@ export function loadCourses() {
     return courseApi
       .getCourses()
       .then(courses => {
+        // dispatch of action-type and payload to the reducer
         dispatch(loadCourseSuccess(courses));
       })
       .catch(error => {
