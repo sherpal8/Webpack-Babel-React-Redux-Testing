@@ -14,6 +14,7 @@ Relevant source code: https://github.com/typicode/json-server/blob/master/src/cl
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const path = require("path");
+const { createSlug, validateCourse } = require("./apiUtils");
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 
 // Can pass a limited number of options to this to override (some) defaults. See https://github.com/typicode/json-server#api
@@ -59,21 +60,3 @@ const port = 3001;
 server.listen(port, () => {
   console.log(`JSON Server is running on port ${port}`);
 });
-
-// Centralized logic
-
-// Returns a URL friendly slug
-function createSlug(value) {
-  return value
-    .replace(/[^a-z0-9_]+/gi, "-")
-    .replace(/^-|-$/g, "")
-    .toLowerCase();
-}
-
-// To validate the course entered
-function validateCourse(course) {
-  if (!course.title) return "Title is required.";
-  if (!course.authorId) return "Author is required.";
-  if (!course.category) return "Category is required.";
-  return "";
-}
