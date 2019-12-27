@@ -27,6 +27,10 @@ module.exports = {
     https: false
   },
   plugins: [
+    new webpack.DefinePlugin({
+      // such that api/courseApi.js and api/authorApi.js can locate the api data i.e. baseUrl
+      "process.env.API_URL": JSON.stringify("http://localhost:3001")
+    }),
     new HtmlWebpackPlugin({
       // tells webpack plugin of where to find html and favicon
       template: "src/index.html",
