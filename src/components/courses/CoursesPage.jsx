@@ -8,13 +8,17 @@ import CourseList from "./CourseList.jsx";
 
 class CoursesPage extends Component {
   componentDidMount() {
-    this.props.actions
-      .loadCourses()
-      .catch(error => alert("Loading courses failed " + error));
+    if (this.props.courses.length === 0) {
+      this.props.actions
+        .loadCourses()
+        .catch(error => alert("Loading courses failed " + error));
+    }
 
-    this.props.actions
-      .loadAuthors()
-      .catch(error => alert("Loading authors failed " + error));
+    if (this.props.authors.length === 0) {
+      this.props.actions
+        .loadAuthors()
+        .catch(error => alert("Loading authors failed " + error));
+    }
   }
 
   render() {
